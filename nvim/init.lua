@@ -55,7 +55,7 @@ Plug('tpope/vim-fireplace', { ['for'] = 'clojure' })
 
 -- Unmanaged plugin (manually installed and updated)
 Plug('~/my-prototype-plugin')
-
+Plug ('ThePrimeagen/vim-be-good')
 vim.call('plug#end')
 
 -- Color schemes should be loaded after plug#end().
