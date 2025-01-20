@@ -1,4 +1,0 @@
-linux:
-  installs: dnf install {{ name }}
-darwin:
-  installs: brew install {{ name }}
