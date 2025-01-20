@@ -2,4 +2,8 @@
 
 My dotfiles.
 
-Managed by [Rotz 👃](https://volllly.github.io/rotz/)
+Very early start to my stow managed dotfiles
+
+install with:
+
+stow .
