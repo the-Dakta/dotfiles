@@ -105,3 +105,4 @@ source $ZSH/oh-my-zsh.sh
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/josh/.lmstudio/bin"
+eval "$(starship init zsh)"
