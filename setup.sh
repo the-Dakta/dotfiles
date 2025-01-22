@@ -5,7 +5,6 @@ DOTFILES_DIR=~/dotfiles
 
 # List of configurations to be stowed to the home directory
 HOME_CONFIGS=("omz" "zsh")
-
 # Function to stow packages to a specified target
 stow_package() {
   local package=$1
