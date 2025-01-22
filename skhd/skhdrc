@@ -1,5 +1,7 @@
 # create new space
 shift + alt - n : yabai -m space --create;
+shift + alt - x : yabai -m space --close;
+
 # change window focus within space
 alt - j : yabai -m window --focus south;
 alt - k : yabai -m window --focus north;
