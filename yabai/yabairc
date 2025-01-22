@@ -77,9 +77,9 @@ yabai -m rule --add app="^Firefox$" space=^4
 yabai -m rule --add app="^Zoom Workplace$" space=^4
 yabai -m rule --add app="^Zoom$" space=^4
 yabai -m rule --add app="^Zoom.us$" space=^4
-yabai -m rule --add app="^Slack$" space=5
+yabai -m rule --add app="^Slack$" space=9
 yabai -m rule --add app="^Notion$" space=2
-yabai -m rule --add app="^Notion Calendar$" space=5
+yabai -m rule --add app="^Notion Calendar$" space=9
 yabai -m rule --add app="^Messages$" space=6
 yabai -m rule --add app="^Cursor$" space=3
 yabai -m rule --add app="^Alacritty$" space=^3

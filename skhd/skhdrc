@@ -1,5 +1,5 @@
-# -- Changing Window Focus --
-
+# create new space
+shift + alt - n : yabai -m space --create;
 # change window focus within space
 alt - j : yabai -m window --focus south;
 alt - k : yabai -m window --focus north;
@@ -10,7 +10,6 @@ alt - l : yabai -m window --focus east;
 ctrl + alt - s: yabai -m display --focus west;
 ctrl + alt - g: yabai -m display --focus east;
 
-# -- Modifying the Layout --
 
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270;
@@ -38,15 +37,9 @@ shift + alt - k : yabai -m window --swap north;
 shift + alt - h : yabai -m window --swap west;
 shift + alt - l : yabai -m window --swap east;
 
-# move window and split
-ctrl + alt - j : yabai -m window --warp south;
-ctrl + alt - k : yabai -m window --warp north;
-ctrl + alt - h : yabai -m window --warp west;
-ctrl + alt - l : yabai -m window --warp east;
-
 # move window to display left and right
-shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
+shift + alt - s : yabai -m window --display west; 
+shift + alt - g : yabai -m window --display east; 
 
 # move window to prev and next space
 shift + alt - p : yabai -m window --space prev;
@@ -75,3 +68,6 @@ alt - x : yabai -m window --close;
 ctrl + shift + alt - q : brew services stop yabai;
 ctrl + shift + alt - s : brew services start yabai;
 ctrl + shift + alt - r : brew services restart yabai;
+
+# open apps
+alt - return : open -a /Applications/Alacritty.app
