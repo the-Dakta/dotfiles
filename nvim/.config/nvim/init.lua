@@ -1,5 +1,5 @@
 
---Bootstrap lazy.nvim
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -21,49 +21,46 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
--- Shorthand notation for GitHub; translates to https://github.com/junegunn/seoul256.vim.git
+-- Plugin configuration
 Plug('junegunn/seoul256.vim')
 
--- Any valid git URL is allowed
+-- Git URL for plugin
 Plug('https://github.com/junegunn/vim-easy-align.git')
 
--- Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+-- Tagged release
 Plug('fatih/vim-go', { ['tag'] = '*' })
 
--- Using a non-default branch
+-- Non-default branch
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
 
 -- Use 'dir' option to install plugin in a non-default directory
-Plug('junegunn/fzf', { ['dir'] = '~/.fzf' })
+Plug('junegunn/fzf', { ['dir'] = '$HOME/.fzf' })
 
 -- Post-update hook: run a shell command after installing or updating the plugin
-Plug('junegunn/fzf', { ['dir'] = '~/.fzf', ['do'] = './install --all' })
+Plug('junegunn/fzf', { ['dir'] = '$HOME/.fzf', ['do'] = './install --all' })
 
--- Post-update hook can be a lambda expression
+-- Post-update hook with lambda expression
 Plug('junegunn/fzf', { ['do'] = function()
   vim.fn['fzf#install']()
 end })
 
--- If the vim plugin is in a subdirectory, use 'rtp' option to specify its path
+-- Subdirectory plugin path
 Plug('nsf/gocode', { ['rtp'] = 'vim' })
 
--- On-demand loading: loaded when the specified command is executed
+-- On-demand loading by command
 Plug('preservim/nerdtree', { ['on'] = 'NERDTreeToggle' })
 
--- On-demand loading: loaded when a file with a specific file type is opened
+-- On-demand loading by file type
 Plug('tpope/vim-fireplace', { ['for'] = 'clojure' })
 
--- Unmanaged plugin (manually installed and updated)
+-- Unmanaged plugin
 Plug('~/my-prototype-plugin')
 
 vim.call('plug#end')
 
--- Color schemes should be loaded after plug#end().
--- We prepend it with 'silent!' to ignore errors when it's not yet installed.
+-- Load color schemes after plug#end()
 vim.cmd('silent! colorscheme seoul256')
 
--- Setup lazy.nvim
+-- Setup lazy.nvim configuration
 require("vim-options")
 require("lazy").setup("plugins")
-
-

@@ -1,0 +1,30 @@
+
+# Environment settings
+[env]
+TERM = "xterm-256color"
+
+# Font configuration
+[font]
+size = 14.0
+
+[font.bold]
+family = "MesloLGS Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS Nerd Font Mono"
+style = "Regular"
+
+# General settings
+[general]
+import = [
+  "$HOME/.config/alacritty/catppuccin-mocha.toml"
+]
