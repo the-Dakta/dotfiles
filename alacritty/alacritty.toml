@@ -1,7 +1,9 @@
 
+# Environment settings
 [env]
 TERM = "xterm-256color"
 
+# Font configuration
 [font]
 size = 14.0
 
@@ -21,7 +23,8 @@ style = "Italic"
 family = "MesloLGS Nerd Font Mono"
 style = "Regular"
 
+# General settings
 [general]
 import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
+  "$HOME/.config/alacritty/catppuccin-mocha.toml"
 ]
