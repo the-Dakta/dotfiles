@@ -72,4 +72,4 @@ ctrl + shift + alt - s : brew services start yabai;
 ctrl + shift + alt - r : brew services restart yabai;
 
 # open apps
-alt - return : open -a /Applications/Alacritty.app
+alt - return : open -a /Applications/ghostty.app
