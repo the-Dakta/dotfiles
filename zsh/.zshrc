@@ -4,6 +4,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set theme for Oh My Zsh
 ZSH_THEME="ys"
 
+# Custom aliases
+alias ..='cd ..'
+alias v='nvim'
+
 # Plugins to load
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
 

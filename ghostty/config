@@ -27,7 +27,7 @@
 # custom-shader = shaders/just-snow.glsl
 # custom-shader = shaders/matrix-hallway.glsl
 # custom-shader = shaders/negative.glsl
-custom-shader = shaders/retro-terminal.glsl
+# custom-shader = shaders/retro-terminal.glsl
 # custom-shader = shaders/smoke-and-ghost.glsl
 # custom-shader = shaders/sparks-from-fire.glsl
 # custom-shader = shaders/spotlight.glsl
