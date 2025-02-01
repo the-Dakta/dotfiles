@@ -22,8 +22,9 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 -- Plugin configuration
+Plug('rcarriga/nvim-notify')
 Plug('junegunn/seoul256.vim')
-
+Plug('antonk52/bad-practices.nvim')
 -- Git URL for plugin
 Plug('https://github.com/junegunn/vim-easy-align.git')
 
@@ -49,6 +50,8 @@ Plug('nsf/gocode', { ['rtp'] = 'vim' })
 
 -- On-demand loading by command
 Plug('preservim/nerdtree', { ['on'] = 'NERDTreeToggle' })
+Plug('m4xshen/hardtime.nvim')
+Plug('christoomey/vim-tmux-navigator')
 
 -- On-demand loading by file type
 Plug('tpope/vim-fireplace', { ['for'] = 'clojure' })
@@ -61,6 +64,13 @@ vim.call('plug#end')
 -- Load color schemes after plug#end()
 vim.cmd('silent! colorscheme seoul256')
 
--- Setup lazy.nvim configuration
+-- vim-tmux-navigator configuration
+vim.g.tmux_navigator_no_mappings = 1
+vim.api.nvim_set_keymap('n', '<C-h>', ':TmuxNavigateLeft<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', ':TmuxNavigateDown<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':TmuxNavigateUp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':TmuxNavigateRight<CR>', { noremap = true, silent = true })
+
 require("vim-options")
+require("hardtime").setup()
 require("lazy").setup("plugins")

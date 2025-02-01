@@ -23,3 +23,8 @@ fi
 export PATH="$PATH:$HOME/.lmstudio/bin"
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
+# Auto-attach to tmux session if not already inside one
+if [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main
+fi
