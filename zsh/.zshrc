@@ -31,6 +31,9 @@ fi
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# spaceship-vi-mode display customization (override after sourcing)
+export SPACESHIP_VI_MODE_NORMAL_PREFIX=$'\e[1;36m❮\e[0m'
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin:/mnt/DataStore/media/dat/scripts"
 eval "$(starship init zsh)"
@@ -40,7 +43,3 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 if [[ -z "$TMUX" && -n "$PS1" ]]; then
   exec tmux new-session -A -s main
 fi
-
-# spaceship-vi-mode plugin load
-plugins+=(spaceship-vi-mode)
-
