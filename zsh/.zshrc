@@ -14,6 +14,9 @@ plugins=(
   zsh-interactive-cd
   zsh-navigation-tools
   vi-mode
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  catppuccin
 )
 
 # Preferred editor for local and remote sessions
