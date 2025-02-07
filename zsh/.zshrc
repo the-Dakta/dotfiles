@@ -1,4 +1,7 @@
-export ZSH="$HOME/dotfiles/omz"
+# Set the location of Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$ZSH/custom"
+
 # Set theme for Oh My Zsh
 ZSH_THEME="ys"
 
@@ -9,7 +12,6 @@ alias v='nvim'
 # Plugins to load
 plugins=(
   git
-  zsh-starship
   zsh-autocomplete
   zsh-interactive-cd
   zsh-navigation-tools
@@ -26,7 +28,7 @@ else
   export EDITOR='nvim'
 fi
 
-fpath=("$HOME/dotfiles/omz/plugins" "$HOME/dotfiles/omz/custom/plugins" "$HOME/dotfiles/zsh/.zsh" $fpath)
+# Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # Added by LM Studio CLI (lms)

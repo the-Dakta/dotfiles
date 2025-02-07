@@ -4,7 +4,7 @@
 DOTFILES_DIR=~/dotfiles
 
 # List of configurations to be stowed directly to the home directory
-HOME_CONFIGS=("zsh")
+HOME_CONFIGS=("zsh" "tmux")
 
 # Function to stow packages to a specified target
 stow_package() {
@@ -15,6 +15,9 @@ stow_package() {
 
 # Ensure ~/.config directory exists
 mkdir -p ~/.config
+
+# Initialize and update all submodules
+git -C "$DOTFILES_DIR" submodule update --init --recursive
 
 # Iterate over each directory in the dotfiles directory
 for package in "$DOTFILES_DIR"/*; do
