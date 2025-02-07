@@ -36,3 +36,10 @@ for package in "$DOTFILES_DIR"/*; do
 done
 
 echo "Dotfiles have been successfully stowed."
+
+# spaceship-vi-mode plugin installation
+if [ ! -d "$ZSH_CUSTOM/plugins/spaceship-vi-mode" ]; then
+  echo "Cloning spaceship-vi-mode plugin..."
+  git clone https://github.com/spaceship-prompt/spaceship-vi-mode.git $ZSH_CUSTOM/plugins/spaceship-vi-mode
+fi
+

@@ -18,6 +18,7 @@ plugins=(
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
+  spaceship-vi-mode
 )
 
 # Preferred editor for local and remote sessions
@@ -39,3 +40,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 if [[ -z "$TMUX" && -n "$PS1" ]]; then
   exec tmux new-session -A -s main
 fi
+
+# spaceship-vi-mode plugin load
+plugins+=(spaceship-vi-mode)
+

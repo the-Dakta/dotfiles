@@ -129,8 +129,8 @@ bindkey "^[m" copy-prev-shell-word
 
 #bindkey -e  ## emacs key bindings
 #
-#bindkey '^[[A' up-line-or-search
-#bindkey '^[[B' down-line-or-search
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 #bindkey '^[^[[C' emacs-forward-word
 #bindkey '^[^[[D' emacs-backward-word
 #
