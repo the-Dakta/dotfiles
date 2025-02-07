@@ -4,7 +4,7 @@
 
 [submodule "omz/custom/plugins/zsh-starship"]
 	path = omz/custom/plugins/zsh-starship
-	url = https://github.com/starship/zsh-starship.git
+	url = https://github.com/starship/starship.git
 
 [submodule "omz/custom/plugins/catppuccin"]
 	path = omz/custom/plugins/catppuccin
@@ -18,10 +18,10 @@
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 
-[submodule "zsh/.zsh/zsh-autosuggestions"]
-	path = zsh/.zsh/zsh-autosuggestions
+[submodule "omz/custom/plugins/zsh-autosuggestions"]
+	path = omz/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 
-[submodule "zsh/.zsh/zsh-syntax-highlighting"]
-	path = zsh/.zsh/zsh-syntax-highlighting
+[submodule "omz/custom/plugins/zsh-syntax-highlighting"]
+	path = omz/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
