@@ -1,3 +1,11 @@
-[submodule "tmux/catppuccin"]
-	path = tmux/catppuccin
-	url = https://github.com/catppuccin/tmux.git
+[submodule "omz/custom/plugins/zsh-autocomplete"]
+	path = omz/custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
+
+[submodule "omz/custom/plugins/zsh-starship"]
+	path = omz/custom/plugins/zsh-starship
+	url = https://github.com/starship/zsh-starship.git
+
+[submodule "omz/custom/plugins/catppuccin"]
+	path = omz/custom/plugins/catppuccin
+	url = https://github.com/catppuccin/ohmyzsh.git
