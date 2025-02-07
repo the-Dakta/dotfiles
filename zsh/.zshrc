@@ -26,7 +26,7 @@ else
   export EDITOR='nvim'
 fi
 
-fpath=($ZSH/plugins $ZSH/custom/plugins $HOME/.config/omz/custom/plugins $fpath)
+fpath=("$HOME/dotfiles/omz/plugins" "$HOME/dotfiles/omz/custom/plugins" "$HOME/dotfiles/zsh/.zsh" $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # Added by LM Studio CLI (lms)
