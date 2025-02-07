@@ -1,5 +1,5 @@
 # Set the location of Oh My Zsh
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/josh/dotfiles/omz"
 export ZSH_CUSTOM="$ZSH/custom"
 
 # Set theme for Oh My Zsh
@@ -18,7 +18,6 @@ plugins=(
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
-  catppuccin
 )
 
 # Preferred editor for local and remote sessions
@@ -37,6 +36,6 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # Auto-attach to tmux session if not already inside one and running in interactive mode.
-if [[ -z "$TMUX" && -n "$PS1" ]]; then
-  exec tmux new-session -A -s main
-fi
+#if [[ -z "$TMUX" && -n "$PS1" ]]; then
+#  exec tmux new-session -A -s main
+#fi

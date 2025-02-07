@@ -25,3 +25,12 @@
 [submodule "omz/custom/plugins/zsh-syntax-highlighting"]
   path = omz/custom/plugins/zsh-syntax-highlighting
   url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "omz/plugins/zsh-autocomplete"]
+	path = omz/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "omz/plugins/zsh-autosuggestions"]
+	path = omz/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "omz/plugins/zsh-syntax-highlighting"]
+	path = omz/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
