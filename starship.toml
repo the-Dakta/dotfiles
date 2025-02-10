@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Icons: https://www.nerdfonts.com/cheat-sheet
-# ░▒▓   ▓▒░   <U+E0B0>
+# ░▒▓   ▓▒░   
 
 # ////////////////////////////////////////////////
 # FORMAT
@@ -9,28 +9,28 @@
 
 # Left
 format = """
-[░▒▓](color_black2)
-$os
-$time
-[<U+E0B0>](fg:color_black2 bg:color_green)
-$hostname
-$localip
-[<U+E0B0>](fg:color_green bg:color_blue2)
-$username
-[<U+E0B0>](fg:color_blue2 bg:color_yellow)
-$shell
-$shlvl
-$sudo
-[<U+E0B0>](fg:color_yellow bg:color_red)
-$git_branch
-$git_status
-$package
-$docker_context
-[<U+E0B0>](fg:color_red bg:color_white3)
-$directory
-[<U+E0B0>](fg:color_white3)
-$line_break
-$character
+[░▒▓](color_black2)\
+$os\
+$time\
+[](fg:color_black2 bg:color_green)\
+$hostname\
+$localip\
+[](fg:color_green bg:color_blue2)\
+$username\
+[](fg:color_blue2 bg:color_yellow)\
+$shell\
+$shlvl\
+$sudo\
+[](fg:color_yellow bg:color_red)\
+$git_branch\
+$git_status\
+$package\
+$docker_context\
+[](fg:color_red bg:color_white3)\
+$directory\
+[](fg:color_white3)\
+$line_break\
+$character\
 [ ](fg:color_fg)
 """
 
@@ -66,6 +66,7 @@ color_blue1 = '#5e81ac'
 color_blue2 = '#81a1c1'
 color_blue3 = '#88c0d0'
 color_blue4 = '#8fbcbb'
+
 # ////////////////////////////////////////////////
 # LINE BREAK (disabled)
 # ////////////////////////////////////////////////
@@ -75,12 +76,12 @@ disabled = true # Disabled
 
 [character]
 disabled = true # Disabled
-success_symbol = '[ :](bold fg:color_green)'
+success_symbol = '[ :](bold fg:color_green)' 
 error_symbol = '[ :](bold fg:color_red)'
-vimcmd_symbol = '[ <U+F434> ](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[ <U+F434> ](bold fg:color_purple)'
-vimcmd_replace_symbol = '[ <U+F434> ](bold fg:color_purple)'
-vimcmd_visual_symbol = '[ <U+F434> ](bold fg:color_yellow)'
+vimcmd_symbol = '[  ](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[  ](bold fg:color_purple)'
+vimcmd_replace_symbol = '[  ](bold fg:color_purple)'
+vimcmd_visual_symbol = '[  ](bold fg:color_yellow)'
 
 # ////////////////////////////////////////////////
 # MODULES LEFT
@@ -92,57 +93,42 @@ style = "fg:color_white3 bg:color_black2"
 format = "[ $symbol ]($style)"
 
 [os.symbols]
-Arch = "<U+F303>"
+Arch = ""
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:color_black2"
-format = '[[ <U+F43A>  $time ](fg:color_white3 bg:color_black2)]($style)'
+format = '[[   $time ](fg:color_white3 bg:color_black2)]($style)'
 
 [hostname]
 disabled = false
 ssh_only = true
-ssh_symbol =  " <U+F1616> " # <U+F1616>  <U+EF09>  <U+F08C0>
+ssh_symbol =  " 󱘖 " # 󱘖    󰣀
 style = "fg:color_bg bg:color_green"
-format = '[$ssh_symbol]($style)[ <U+F0379>  $hostname ]($style)'
+format = '[$ssh_symbol]($style)[ 󰍹  $hostname ]($style)'
 
 [localip]
 disabled = false
 ssh_only = true
 style = "fg:color_bg bg:color_green"
-format = '[ <U+F0A5F> $localipv4 ]($style)'
-
-[username]
-disabled = false
-show_always = false
-style_user = "fg:color_bg bg:color_blue2"
-style_root = "fg:color_red bg:color_blue2"
-format = '[ <U+F2BD> ]($style)[ $user ](fg:color_bg bg:color_blue2)'
-
-[shell]
-disabled = false
-fish_indicator = ""
-bash_indicator = " <U+F489>  bash "
-unknown_indicator = " <U+F489>  shell "
-style = "fg:color_bg bg:color_yellow"
-format = "[$indicator]($style)"
+format = '[ 󰩟 $localipv4 ]($style)'
 
 [shlvl]
 disabled = false
 threshold = 2
-symbol = '<U+F09F>'
+symbol = ''
 style = "fg:color_bg bg:color_yellow"
 format = "[ $symbol $shlvl ]($style)"
 
 [sudo]
 disabled = false
-symbol = '<U+F0306> '
+symbol = '󰌆 ' 
 style = "fg:color_red bg:color_yellow"
 format = '[ $symbol ]($style)'
 
 [git_branch]
-symbol = "<U+F418>"
+symbol = ""
 style = "bg:color_red"
 format = '[[ $symbol $branch ](fg:color_fg bg:color_red)]($style)'
 
@@ -151,21 +137,21 @@ style = "bg:color_red"
 format = '[[($all_status$ahead_behind )](fg:color_fg bg:color_red)]($style)'
 
 [package]
-format = '[ <U+F487> $version ](fg:color_fg bg:color_red)'
+format = '[  $version ](fg:color_fg bg:color_red)'
 
 [docker_context]
-symbol = "<U+F308>"
+symbol = ""
 style = "bg:color_red"
 format = '[[ $symbol( $context) ](fg:color_fg bg:color_red)]($style)'
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
-home_symbol = "<U+F015> "
-read_only = " <U+E672> "
+home_symbol = " " 
+read_only = "  "
 read_only_style = "fg:color_red bg:color_white3"
 style = "fg:color_bg bg:color_white3"
-format = "[ <U+F041> ]($style)[$read_only]($read_only_style)[ $path ]($style)"
+format = "[  ]($style)[$read_only]($read_only_style)[ $path ]($style)"
 
 # ////////////////////////////////////////////////
 # MODULES RIGHT

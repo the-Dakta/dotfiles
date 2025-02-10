@@ -1,6 +1,8 @@
 format = """
 [╭](fg:current_line)\
 $os\
+$sudo\
+$shlvl\
 $directory\
 $git_branch\
 $fill\
@@ -11,6 +13,8 @@ $java\
 $c\
 $cmd_duration\
 $shell\
+$hostname\
+$localip\
 $time\
 $username\
 $line_break\
@@ -161,6 +165,33 @@ disabled = false
 [username]
 format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
 show_always = true
+
+[hostname]
+disabled = false
+ssh_only = true
+ssh_symbol =  " 󱘖 " # 󱘖    󰣀
+style = "fg:color_bg bg:color_green"
+format = '[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ 󰍹  $hostname ](fg:foreground bg:box)[](fg:box)'
+
+[localip]
+disabled = false
+ssh_only = true
+style = "fg:color_bg bg:color_green"
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $localipv4](fg:foreground bg:box)[](fg:box) '
+
+
+[shlvl]
+disabled = false
+threshold = 2
+symbol = ''
+style = "fg:color_bg bg:color_yellow"
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $shlvl](fg:foreground bg:box)[](fg:box) '
+
+[sudo]
+disabled = false
+symbol = ' ' 
+style = "fg:color_red bg:color_yellow"
+format = '[ $symbol ]($style)'
 
 [character]
 format = """
