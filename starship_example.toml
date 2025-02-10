@@ -1,0 +1,176 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Icons: https://www.nerdfonts.com/cheat-sheet
+# ░▒▓   ▓▒░   <U+E0B0>
+
+# ////////////////////////////////////////////////
+# FORMAT
+# ////////////////////////////////////////////////
+
+# Left
+format = """
+[░▒▓](color_black2)
+$os
+$time
+[<U+E0B0>](fg:color_black2 bg:color_green)
+$hostname
+$localip
+[<U+E0B0>](fg:color_green bg:color_blue2)
+$username
+[<U+E0B0>](fg:color_blue2 bg:color_yellow)
+$shell
+$shlvl
+$sudo
+[<U+E0B0>](fg:color_yellow bg:color_red)
+$git_branch
+$git_status
+$package
+$docker_context
+[<U+E0B0>](fg:color_red bg:color_white3)
+$directory
+[<U+E0B0>](fg:color_white3)
+$line_break
+$character
+[ ](fg:color_fg)
+"""
+
+# Right
+right_format = """$cmd_duration"""
+
+# Empty line
+add_newline = true
+
+# ////////////////////////////////////////////////
+# COLORS
+# ////////////////////////////////////////////////
+
+palette = 'arch_os'
+
+# Nord: https://www.nordtheme.com
+[palettes.arch_os]
+color_fg = '#d8dee9'
+color_bg = '#2e3440'
+color_red = '#bf616a'
+color_green = '#a3be8c'
+color_purple = '#b48ead'
+color_yellow = '#ebcb8b'
+color_orange = '#d08770'
+color_white1 = '#eceff4'
+color_white2 = '#e5e9f0'
+color_white3 = '#d8dee9'
+color_black1 = '#2e3440'
+color_black2 = '#3b4252'
+color_black3 = '#434c5e'
+color_black4 = '#4c566a'
+color_blue1 = '#5e81ac'
+color_blue2 = '#81a1c1'
+color_blue3 = '#88c0d0'
+color_blue4 = '#8fbcbb'
+# ////////////////////////////////////////////////
+# LINE BREAK (disabled)
+# ////////////////////////////////////////////////
+
+[line_break]
+disabled = true # Disabled
+
+[character]
+disabled = true # Disabled
+success_symbol = '[ :](bold fg:color_green)'
+error_symbol = '[ :](bold fg:color_red)'
+vimcmd_symbol = '[ <U+F434> ](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[ <U+F434> ](bold fg:color_purple)'
+vimcmd_replace_symbol = '[ <U+F434> ](bold fg:color_purple)'
+vimcmd_visual_symbol = '[ <U+F434> ](bold fg:color_yellow)'
+
+# ////////////////////////////////////////////////
+# MODULES LEFT
+# ////////////////////////////////////////////////
+
+[os]
+disabled = false
+style = "fg:color_white3 bg:color_black2"
+format = "[ $symbol ]($style)"
+
+[os.symbols]
+Arch = "<U+F303>"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:color_black2"
+format = '[[ <U+F43A>  $time ](fg:color_white3 bg:color_black2)]($style)'
+
+[hostname]
+disabled = false
+ssh_only = true
+ssh_symbol =  " <U+F1616> " # <U+F1616>  <U+EF09>  <U+F08C0>
+style = "fg:color_bg bg:color_green"
+format = '[$ssh_symbol]($style)[ <U+F0379>  $hostname ]($style)'
+
+[localip]
+disabled = false
+ssh_only = true
+style = "fg:color_bg bg:color_green"
+format = '[ <U+F0A5F> $localipv4 ]($style)'
+
+[username]
+disabled = false
+show_always = false
+style_user = "fg:color_bg bg:color_blue2"
+style_root = "fg:color_red bg:color_blue2"
+format = '[ <U+F2BD> ]($style)[ $user ](fg:color_bg bg:color_blue2)'
+
+[shell]
+disabled = false
+fish_indicator = ""
+bash_indicator = " <U+F489>  bash "
+unknown_indicator = " <U+F489>  shell "
+style = "fg:color_bg bg:color_yellow"
+format = "[$indicator]($style)"
+
+[shlvl]
+disabled = false
+threshold = 2
+symbol = '<U+F09F>'
+style = "fg:color_bg bg:color_yellow"
+format = "[ $symbol $shlvl ]($style)"
+
+[sudo]
+disabled = false
+symbol = '<U+F0306> '
+style = "fg:color_red bg:color_yellow"
+format = '[ $symbol ]($style)'
+
+[git_branch]
+symbol = "<U+F418>"
+style = "bg:color_red"
+format = '[[ $symbol $branch ](fg:color_fg bg:color_red)]($style)'
+
+[git_status]
+style = "bg:color_red"
+format = '[[($all_status$ahead_behind )](fg:color_fg bg:color_red)]($style)'
+
+[package]
+format = '[ <U+F487> $version ](fg:color_fg bg:color_red)'
+
+[docker_context]
+symbol = "<U+F308>"
+style = "bg:color_red"
+format = '[[ $symbol( $context) ](fg:color_fg bg:color_red)]($style)'
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "<U+F015> "
+read_only = " <U+E672> "
+read_only_style = "fg:color_red bg:color_white3"
+style = "fg:color_bg bg:color_white3"
+format = "[ <U+F041> ]($style)[$read_only]($read_only_style)[ $path ]($style)"
+
+# ////////////////////////////////////////////////
+# MODULES RIGHT
+# ////////////////////////////////////////////////
+
+[cmd_duration]
+style = "fg:color_fg"
+format = "[ ◄ $duration ]($style)"
