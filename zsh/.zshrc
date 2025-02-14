@@ -1,5 +1,5 @@
 # Set the location of Oh My Zsh
-export ZSH="/Users/josh/dotfiles/omz"
+export ZSH="$HOME/.config/omz"
 export ZSH_CUSTOM="$ZSH/custom"
 
 # Set theme for Oh My Zsh
