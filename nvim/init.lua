@@ -1,4 +1,9 @@
 
+local plug_path = vim.fn.stdpath("config") .. "/autoload/plug.vim"
+if vim.fn.empty(vim.fn.glob(plug_path)) > 0 then
+  vim.fn.system({"curl", "-fLo", plug_path, "--create-dirs", "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"})
+end
+vim.cmd("source " .. plug_path)
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
