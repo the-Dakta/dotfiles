@@ -55,7 +55,7 @@ Plug('nsf/gocode', { ['rtp'] = 'vim' })
 
 -- On-demand loading by command
 Plug('preservim/nerdtree', { ['on'] = 'NERDTreeToggle' })
-Plug('m4xshen/hardtime.nvim')
+Plug('nvim/plugged/hardtime.nvim')
 Plug('christoomey/vim-tmux-navigator')
 
 -- On-demand loading by file type
@@ -77,5 +77,10 @@ vim.api.nvim_set_keymap('n', '<C-k>', ':TmuxNavigateUp<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<C-l>', ':TmuxNavigateRight<CR>', { noremap = true, silent = true })
 
 require("vim-options")
-require("hardtime").setup()
+local ok, hardtime = pcall(require, "hardtime")
+if ok then
+  hardtime.setup()
+else
+  print("hardtime.nvim not found. Please run :PlugInstall or check submodules.")
+end
 require("lazy").setup("plugins")
