@@ -37,9 +37,12 @@ done
 
 echo "Dotfiles have been successfully stowed."
 
+if [ -z "$ZSH_CUSTOM" ]; then
+  export ZSH_CUSTOM=$HOME/omz/custom
+fi
+
 # spaceship-vi-mode plugin installation
 if [ ! -d "$ZSH_CUSTOM/plugins/spaceship-vi-mode" ]; then
   echo "Cloning spaceship-vi-mode plugin..."
-  git clone https://github.com/spaceship-prompt/spaceship-vi-mode.git $ZSH_CUSTOM/plugins/spaceship-vi-mode
+  git clone https://github.com/spaceship-prompt/spaceship-vi-mode.git ${ZSH_CUSTOM:-$HOME/omz/custom}/plugins/spaceship-vi-mode
 fi
-
